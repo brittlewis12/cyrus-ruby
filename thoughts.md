@@ -34,6 +34,12 @@
     * store temporarily as hash (least overhead, but volatile)
     * persist records as csv/text file (stable, easy to share, environment-agnostic)
     * persist records to db (stable, lots of config req'd, most powerful for sorting and reorganizing)
+
+#in between
+* OBJECTS?
+* Hashes?
+
+#CSV
 * write each record to a new file, starting at end
     * `file = File.new("filename.txt", 'a+')`
         * mode options:
