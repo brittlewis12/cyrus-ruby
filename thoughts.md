@@ -1,17 +1,26 @@
 #**keep in mind**
-* "We hope that this exercise will allow us to evaluate your skills as a developer. The qualities that we pay special attention to are:
+* From Cyrus: "We hope that this exercise will allow us to evaluate your skills as a developer. The qualities that we pay special attention to are:
     * Simplicity/elegance of design
     * Adherence to good software engineering principles
     * Maintainability (clean, easy to understand code)
     * Effective use of the standard library
     * Use of unit tests"
+* Single-responsibility principle!
+* Separation of concerns!
+    * raw data
+        * read
+        * parse
+        * transform, make uniform
+    * parsed data
+        * order by different attributes
+        * output (same each time)
 
 #the given files
-* comma-separated
+* comma-delimited
     * last, first, gender, color, m/dd/yyyy
-* pipe
+* pipe-delimited
     * last | first | m | g | color | m-d-yyyy
-* space
+* space-delimited
     * last first m g m-d-yyyy color
 
 #strategy for getting the records
@@ -20,11 +29,11 @@
     * grab each line and put it into some ruby data structure array
     * replace '|' & ',' characters with single whitespace
         * without removing '-' separating dates
-        * `gsub(/[^\w|-]/, " ")`
+        * `gsub(/([^\w\/-])+/, ",")`
     * then replace '-' with '/'
         * `gsub([-], "/")`
     * then remove middle initial
-        * `split(" ")` to create array of line data
+        * `split(",")` to create array of line data
         * check if array length is 6 to avoid deleting gender
         * `data.delete_at(2) if data.length == 6`
 * at this point, all data is uniformly formatted, but the colors are in the wrong place for data from two of the three sources
@@ -36,7 +45,7 @@
     * persist records to db (stable, lots of config req'd, most powerful for sorting and reorganizing)
 
 #in between
-* OBJECTS?
+* Custom Record objects?
 * Hashes?
 
 #CSV
