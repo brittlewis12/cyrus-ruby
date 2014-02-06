@@ -30,16 +30,4 @@ describe "RecordParser" do
       end
     end
   end
-
-  # describe "#" do
-  #   it "" do
-  #   end
-  # end
-
-  # describe "#" do
-  #   it "" do
-  #   end
-  # end
 end
-
-# describe "RecordFactory"
