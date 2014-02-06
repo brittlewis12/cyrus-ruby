@@ -6,14 +6,12 @@ require_relative '../lib/record'
 describe "RecordParser" do
   describe "::read" do
     let(:pipe_config) do
-      {
-        first_name: 1,
-        last_name: 0,
+      { first_name:     1,
+        last_name:      0,
         middle_initial: 2,
-        gender: 3,
-        date_of_birth: 5,
-        favorite_color: 4
-      }
+        gender:         3,
+        date_of_birth:  5,
+        favorite_color: 4 }
     end
 
     it "defaults to the standard comma-separated csv implementation and returns an array of arrays" do
