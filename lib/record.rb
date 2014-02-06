@@ -13,9 +13,9 @@ class Record
     "#{last_name}, #{first_name}, #{gender}, #{date_of_birth}, #{favorite_color}"
   end
 
-  private
+  private # TODO perhaps move these methods' logic to record config or record factory once implemented
 
-  def wordify_gender(gender)
+  def wordify_gender(gender) # FIXME method name...
     case gender
     when "M"
       "Male"
