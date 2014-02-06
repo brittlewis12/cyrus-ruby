@@ -1,6 +1,5 @@
 require_relative './lib/record'
 require_relative './lib/record_parser'
-require 'pry'
 
 pipe_config = {
   last_name:      0,
@@ -42,8 +41,6 @@ records << RecordParser.read("docs/space.txt",
                             config: space_config)
 
 records.flatten!
-
-binding.pry
 
 puts "GENDER, THEN LAST NAME ASCENDING:\n"
 

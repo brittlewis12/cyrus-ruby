@@ -10,7 +10,7 @@ class Record
   end
 
   def to_string
-    "#{last_name}, #{first_name}, #{gender}, #{date_of_birth}, #{favorite_color}"
+    "#{last_name} #{first_name} #{gender} #{date_of_birth} #{favorite_color}"
   end
 
   private # TODO perhaps move these methods' logic to record config or record factory once implemented
