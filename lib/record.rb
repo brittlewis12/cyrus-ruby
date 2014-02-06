@@ -4,12 +4,29 @@ class Record
   def initialize(attrs = {})
     @first_name     = attrs[:first_name]
     @last_name      = attrs[:last_name]
-    @gender         = attrs[:gender]
     @favorite_color = attrs[:favorite_color]
-    @date_of_birth  = attrs[:date_of_birth]
+    @gender         = wordify_gender(attrs[:gender])
+    @date_of_birth  = format_date(attrs[:date_of_birth])
   end
 
   def to_string
     "#{last_name}, #{first_name}, #{gender}, #{date_of_birth}, #{favorite_color}"
+  end
+
+  private
+
+  def wordify_gender(gender)
+    case gender
+    when "M"
+      "Male"
+    when "F"
+      "Female"
+    else
+      gender
+    end
+  end
+
+  def format_date(date)
+    date.gsub("-", "/")
   end
 end
