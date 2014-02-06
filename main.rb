@@ -22,21 +22,21 @@ space_config = {last_name:      0,
                 date_of_birth:  4,
                 favorite_color: 5}
 
-records = []
-records << RecordParser.read("docs/comma.txt",
+records = RecordParser.read("docs/comma.txt",
                             delimiter: ", ",
                             config: comma_config)
 
-records << RecordParser.read("docs/pipe.txt",
+records += RecordParser.read("docs/pipe.txt",
                             delimiter: " | ",
                             config: pipe_config)
 
-records << RecordParser.read("docs/space.txt",
+records += RecordParser.read("docs/space.txt",
                             delimiter: " ",
                             config: space_config)
-records.flatten!
 
 include RecordHelper
+
+# TODO change from terminal output to new file output
 
 puts "Output 1 (gender, then last name ascending):\n"
 generate_output(gender_sort(records))
