@@ -25,10 +25,6 @@
 
 #strategy for getting the records
 * CSV lib
-* when to remove middle initial??
-    * check if array length is 6 to avoid deleting gender
-    * `data.delete_at(2) if data.length == 6`
-* at this point, all data is uniformly formatted, but the colors are in the wrong place for data from two of the three sources
 
 #got the data, now what?
 * some options for proceeding:

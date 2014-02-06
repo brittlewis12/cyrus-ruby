@@ -22,8 +22,6 @@ space_config = {last_name:      0,
                 date_of_birth:  4,
                 favorite_color: 5}
 
-include RecordHelper
-
 records = []
 records << RecordParser.read("docs/comma.txt",
                             delimiter: ", ",
@@ -37,6 +35,8 @@ records << RecordParser.read("docs/space.txt",
                             delimiter: " ",
                             config: space_config)
 records.flatten!
+
+include RecordHelper
 
 puts "Output 1 (gender, then last name ascending):\n"
 generate_output(gender_sort(records))
