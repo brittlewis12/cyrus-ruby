@@ -1,31 +1,28 @@
 require_relative './lib/record'
 require_relative './lib/record_parser'
+require_relative './lib/record_helper'
 
-pipe_config = {
-  last_name:      0,
-  first_name:     1,
-  middle_initial: 2,
-  gender:         3,
-  favorite_color: 4,
-  date_of_birth:  5
-}
+pipe_config  = {last_name:      0,
+                first_name:     1,
+                middle_initial: 2,
+                gender:         3,
+                favorite_color: 4,
+                date_of_birth:  5}
 
-comma_config = {
-  last_name:      0,
-  first_name:     1,
-  gender:         2,
-  favorite_color: 3,
-  date_of_birth:  4
-}
+comma_config = {last_name:      0,
+                first_name:     1,
+                gender:         2,
+                favorite_color: 3,
+                date_of_birth:  4}
 
-space_config = {
-  last_name:      0,
-  first_name:     1,
-  middle_initial: 2,
-  gender:         3,
-  date_of_birth:  4,
-  favorite_color: 5
-}
+space_config = {last_name:      0,
+                first_name:     1,
+                middle_initial: 2,
+                gender:         3,
+                date_of_birth:  4,
+                favorite_color: 5}
+
+include RecordHelper
 
 records = []
 records << RecordParser.read("docs/comma.txt",
@@ -39,33 +36,13 @@ records << RecordParser.read("docs/pipe.txt",
 records << RecordParser.read("docs/space.txt",
                             delimiter: " ",
                             config: space_config)
-
 records.flatten!
 
-puts "GENDER, THEN LAST NAME ASCENDING:\n"
+puts "Output 1 (gender, then last name ascending):\n"
+generate_output(gender_sort(records))
 
-gender_last_asc = records.sort do |a,b|
-  if a.gender < b.gender
-    -1
-  elsif a.gender > b.gender
-    1
-  else
-    a.last_name <=> b.last_name
-  end
-end
+puts "\nOutput 2 (birth date ascending):\n"
+generate_output(birth_sort(records))
 
-gender_last_asc.each {|rec| puts rec.to_string}
-
-puts "\n\nBIRTH DATE ASCENDING:\n"
-
-birth_asc = records.sort do |a,b|
-  Date.strptime("#{a.date_of_birth}", "%m/%d/%Y") <=> Date.strptime("#{b.date_of_birth}", "%m/%d/%Y")
-end
-
-birth_asc.each {|rec| puts rec.to_string}
-
-puts "\n\nLAST NAME DESCENDING:\n"
-
-last_desc = records.sort {|a,b| b.last_name <=> a.last_name }
-last_desc.each {|rec| puts rec.to_string}
-
+puts "\nOutput 3 (last name descending):\n"
+generate_output(last_sort(records))

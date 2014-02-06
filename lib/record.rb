@@ -5,8 +5,8 @@ class Record
     @first_name     = attrs[:first_name]
     @last_name      = attrs[:last_name]
     @favorite_color = attrs[:favorite_color]
-    @gender         = wordify_gender(attrs[:gender])
-    @date_of_birth  = format_date(attrs[:date_of_birth])
+    @gender         = wordify(attrs[:gender])
+    @date_of_birth  = reformat(attrs[:date_of_birth])
   end
 
   def to_string
@@ -15,7 +15,7 @@ class Record
 
   private
 
-  def wordify_gender(gender) # FIXME method name...
+  def wordify(gender)
     case gender
     when "M"
       "Male"
@@ -26,7 +26,7 @@ class Record
     end
   end
 
-  def format_date(date)
-    date.gsub("-", "/")
+  def reformat(date_str)
+    date_str.gsub("-", "/")
   end
 end

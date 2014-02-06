@@ -5,13 +5,12 @@ module RecordParser
     delimiter = options.fetch(:delimiter, ",")
 
     if options[:config]
-      cfg = options[:config]
-      records = []
+      records, cfg = [], options[:config]
 
       CSV.foreach(file_path, col_sep: delimiter) do |row|
-        records << Record.new(last_name:      row[cfg[:last_name]],
+        records << Record.new(gender:         row[cfg[:gender]],
+                              last_name:      row[cfg[:last_name]],
                               first_name:     row[cfg[:first_name]],
-                              gender:         row[cfg[:gender]],
                               date_of_birth:  row[cfg[:date_of_birth]],
                               favorite_color: row[cfg[:favorite_color]])
       end
@@ -22,5 +21,3 @@ module RecordParser
     end
   end
 end
-
-# options = { config, delimiter }
