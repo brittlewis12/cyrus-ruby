@@ -6,9 +6,24 @@ require_relative '../lib/record_helper'
 describe RecordHelper do
   include RecordHelper
 
-  let(:britt)   {Record.new(last_name: "Lewis", first_name: "Britt", gender: "Male", birth_date: "4/30/1990", favorite_color: "Blue")}
-  let(:raleigh) {Record.new(last_name: "Daniel", first_name: "Raleigh", gender: "Female", birth_date: "12/11/1989", favorite_color: "Teal")}
-  let(:shmee)   {Record.new(last_name: "Konowitch", first_name: "Shmee", gender: "Male", birth_date: "5/23/1988", favorite_color: "Rainbows")}
+  let(:britt)   {Record.new(last_name: "Lewis",
+                            first_name: "Britt",
+                            gender: "Male",
+                            birth_date: "4/30/1990",
+                            favorite_color: "Blue")}
+
+  let(:raleigh) {Record.new(last_name: "Daniel",
+                            first_name: "Raleigh",
+                            gender: "Female",
+                            birth_date: "12/11/1989",
+                            favorite_color: "Teal")}
+
+  let(:shmee)   {Record.new(last_name: "Konowitch",
+                            first_name: "Shmee",
+                            gender: "Male",
+                            birth_date: "5/23/1988",
+                            favorite_color: "Rainbows")}
+
   let(:records) {[britt, raleigh, shmee]}
 
   describe "#gender_sort" do
