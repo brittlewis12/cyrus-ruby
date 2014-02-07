@@ -36,6 +36,8 @@ records += RecordParser.read("./docs/space.txt",
 
 include RecordHelper
 
+puts "'output.txt' has already been created!" if File::exists?("./output.txt")
+
 output_file = File.new("./output.txt", "w")
 
 output_file.puts "Output 1 (gender, then last name ascending):\n"
