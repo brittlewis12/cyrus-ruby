@@ -36,11 +36,15 @@ records += RecordParser.read("./docs/space.txt",
 
 include RecordHelper
 
-puts "Output 1 (gender, then last name ascending):\n"
-write_records(gender_sort(records))
+output_file = File.new("./output.txt", "w", 0755)
 
-puts "\nOutput 2 (birth date ascending):\n"
-write_records(birth_date_sort(records))
+output_file.puts "Output 1 (gender, then last name ascending):\n"
+write_records(gender_sort(records), output_file)
 
-puts "\nOutput 3 (last name descending):\n"
-write_records(last_name_sort(records))
+output_file.puts "\nOutput 2 (birth date ascending):\n"
+write_records(birth_date_sort(records), output_file)
+
+output_file.puts "\nOutput 3 (last name descending):\n"
+write_records(last_name_sort(records), output_file)
+
+output_file.close

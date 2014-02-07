@@ -27,7 +27,7 @@ module RecordHelper
     Date.strptime(string, "%m/%d/%Y")
   end
 
-  def write_records(array)
-    array.each {|rec| puts rec.to_string}
+  def write_records(array, file)
+    array.each {|rec| file.puts rec.to_string}
   end
 end
