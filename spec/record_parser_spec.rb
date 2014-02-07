@@ -9,7 +9,7 @@ describe "RecordParser" do
         last_name:      0,
         middle_initial: 2,
         gender:         3,
-        date_of_birth:  5,
+        birth_date:     5,
         favorite_color: 4 }
     end
 

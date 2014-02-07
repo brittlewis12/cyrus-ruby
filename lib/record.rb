@@ -1,16 +1,16 @@
 class Record
-  attr_reader :first_name, :last_name, :gender, :favorite_color, :date_of_birth
+  attr_reader :first_name, :last_name, :gender, :favorite_color, :birth_date
 
   def initialize(attrs = {})
     @first_name     = attrs[:first_name]
     @last_name      = attrs[:last_name]
     @favorite_color = attrs[:favorite_color]
     @gender         = wordify(attrs[:gender])
-    @date_of_birth  = reformat(attrs[:date_of_birth])
+    @birth_date     = reformat(attrs[:birth_date])
   end
 
   def to_string
-    "#{last_name} #{first_name} #{gender} #{date_of_birth} #{favorite_color}"
+    "#{last_name} #{first_name} #{gender} #{birth_date} #{favorite_color}"
   end
 
   private

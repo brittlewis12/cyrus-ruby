@@ -9,21 +9,25 @@ module RecordHelper
     end
   end
 
-  def birth_sort(array)
+  def birth_date_sort(array)
     array.sort do |a,b|
-      convert_date(a.date_of_birth) <=> convert_date(b.date_of_birth)
+      if a.birth_date != b.birth_date
+        convert_to_date(a.birth_date) <=> convert_to_date(b.birth_date)
+      else
+        a.last_name <=> b.last_name
+      end
     end
   end
 
-  def last_sort(array)
+  def last_name_sort(array)
     array.sort {|a,b| b.last_name <=> a.last_name}
   end
 
-  def convert_date(string)
+  def convert_to_date(string)
     Date.strptime(string, "%m/%d/%Y")
   end
 
-  def generate_output(array)
+  def write_records(array)
     array.each {|rec| puts rec.to_string}
   end
 end

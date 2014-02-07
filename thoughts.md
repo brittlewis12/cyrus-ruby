@@ -23,18 +23,6 @@
 * space-delimited
     * last first m g m-d-yyyy color
 
-#strategy for getting the records
-* CSV lib
-
-#got the data, now what?
-* some options for proceeding:
-    * store temporarily as hash (least overhead, but volatile)
-    * persist records as csv/text file (stable, easy to share, environment-agnostic)
-
-#in between
-* Custom Record objects?
-* Hashes?
-
 #CSV
 * write each record to a new file, starting at end
     * `file = File.new("filename.txt", 'a+')`

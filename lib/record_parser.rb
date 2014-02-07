@@ -8,10 +8,11 @@ module RecordParser
       records, cfg = [], options[:config]
 
       CSV.foreach(file_path, col_sep: delimiter) do |row|
+        #
         records << Record.new(gender:         row[cfg[:gender]],
                               last_name:      row[cfg[:last_name]],
                               first_name:     row[cfg[:first_name]],
-                              date_of_birth:  row[cfg[:date_of_birth]],
+                              birth_date:     row[cfg[:birth_date]],
                               favorite_color: row[cfg[:favorite_color]])
       end
 

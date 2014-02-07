@@ -6,7 +6,7 @@ describe Record do
                            first_name: "Neil",
                            gender: "M",
                            favorite_color: "Tan",
-                           date_of_birth: "2-13-1943")}
+                           birth_date: "2-13-1943")}
 
   describe "#first_name" do
     it "has a first name" do
@@ -32,15 +32,15 @@ describe Record do
     end
   end
 
-  describe "#date_of_birth" do
+  describe "#birth_date" do
     it "has a date of birth that is forward-slash formatted" do
-      expect(record.date_of_birth).to eq("2/13/1943")
+      expect(record.birth_date).to eq("2/13/1943")
     end
   end
 
   describe "#to_string" do
     it "outputs a string with its last name, first name, gender, date of birth, and favorite color" do
-      expect(record.to_string).to eq("Abercrombie, Neil, Male, 2/13/1943, Tan")
+      expect(record.to_string).to eq("Abercrombie Neil Male 2/13/1943 Tan")
     end
   end
 end
