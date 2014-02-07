@@ -2,7 +2,7 @@ require 'spec_helper'
 require_relative '../lib/record_parser'
 require_relative '../lib/record'
 
-describe "RecordParser" do
+describe RecordParser do
   describe "::read" do
     let(:pipe_config) do
       { first_name:     1,
