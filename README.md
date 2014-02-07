@@ -16,14 +16,15 @@ Write a Ruby program to first assemble a single set of records by parsing data f
 ##Input Data
 A record consists of the following 5 fields:
     * last name, first name, gender, date of birth and favorite color.
+
 You will be given 3 files, each containing records stored in a different format.
 
-The [pipe-delimited file](http://cyrusinnovation.web12.hubspot.com/Portals/190402/docs/pipe.txt) lists each record as follows:
-    * LastName | FirstName | MiddleInitial | Gender | FavoriteColor | DateOfBirth
-The [comma-delimited file](http://cyrusinnovation.web12.hubspot.com/Portals/190402/docs/comma.txt) looks like this:
-    * LastName, FirstName, Gender, FavoriteColor, DateOfBirth
-The [space-delimited file](http://cyrusinnovation.web12.hubspot.com/Portals/190402/docs/space.txt) looks like this:
-    * LastName FirstName MiddleInitial Gender DateOfBirth FavoriteColor
+    * The [pipe-delimited file](http://cyrusinnovation.web12.hubspot.com/Portals/190402/docs/pipe.txt) lists each record as follows:
+        * LastName | FirstName | MiddleInitial | Gender | FavoriteColor | DateOfBirth
+    * The [comma-delimited file](http://cyrusinnovation.web12.hubspot.com/Portals/190402/docs/comma.txt) looks like this:
+        * LastName, FirstName, Gender, FavoriteColor, DateOfBirth
+    * The [space-delimited file](http://cyrusinnovation.web12.hubspot.com/Portals/190402/docs/space.txt) looks like this:
+        * LastName FirstName MiddleInitial Gender DateOfBirth FavoriteColor
 
 You may assume that the delimiters (commas, pipes and spaces) do not appear anywhere in the data values themselves. **Write a Ruby program to read in records from these files and combine them into a single set of records.**
 
